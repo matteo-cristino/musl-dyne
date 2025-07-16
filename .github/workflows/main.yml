@@ -75,7 +75,7 @@ jobs:
         run: |
           make -s -j`nproc` TARGET="${{ matrix.target }}"
           make -s install   TARGET="${{ matrix.target }}"
-          cd /opt && tar -cJf musl-dyne-${{ matrix.output }} musl-dyne
+          cd /opt && tar -cJf musl-dyne-${{ matrix.output }}.tar.xz musl-dyne
       - name: Upload release artifacts musl-dyne-${{ matrix.output }}
         uses: actions/upload-artifact@v4
         with:
